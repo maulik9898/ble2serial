@@ -1,0 +1,66 @@
+{
+    "build": {
+        "beforeDevCommand": "npm run dev",
+        "beforeBuildCommand": "npm run build",
+        "devPath": "http://localhost:1420",
+        "distDir": "../dist",
+        "withGlobalTauri": false
+    },
+    "package": {
+        "productName": "BS BLE2SERIAL",
+        "version": "0.0.0"
+    },
+    "tauri": {
+        "allowlist": {
+            "fs": {
+                "scope": ["$RESOURCE/com0com/*"]
+            },
+            "all": false,
+            "shell": {
+                "all": false,
+                "open": true
+            },
+            "window": {
+                "all": false,
+                "close": true,
+                "hide": true,
+                "show": true,
+                "maximize": true,
+                "minimize": true,
+                "unmaximize": true,
+                "unminimize": true,
+                "startDragging": true
+            }
+        },
+        "bundle": {
+            "active": true,
+            "icon": [
+                "icons/32x32.png",
+                "icons/128x128.png",
+                "icons/128x128@2x.png",
+                "icons/icon.icns",
+                "icons/icon.ico"
+            ],
+            "identifier": "com.bs.ble2serial",
+            "targets": "all",
+            "resources": ["com0com/*"]
+        },
+        "security": {
+            "csp": null
+        },
+        "updater": {
+            "active": false
+        },
+        "windows": [
+            {
+                "label": "main",
+                "fullscreen": false,
+                "resizable": false,
+                "title": "BS BLE2SERIAL",
+                "width": 360,
+                "height": 550,
+                "decorations": false
+            }
+        ]
+    }
+}
